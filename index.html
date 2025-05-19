@@ -73,19 +73,40 @@
 
 
 
-<section id="mira">
+
+<section id="mira" class="mira-slider-section">
   <h2 style="text-align: center; margin-top: 60px; font-size: 2em; color: #3b5243;">MIRÁ</h2>
-  <div class="mira-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 0 5vw;">
-    <a href="https://www.instagram.com/p/DIzbEuDpnrk/?hl=es-la" target="_blank" class="mira-item" style="flex: 0 0 45%; text-align: center;">
-      <img src="video1.png" alt="El Chad Sabía Algo" style="width: 100%; border: 4px solid #3b5243; border-radius: 12px;">
-      <p style="color: #3b5243; font-size: 1.4em; text-align: center; font-weight: bold;">EL CHAD SABÍA ALGO</p>
-    </a>
-    <a href="https://www.instagram.com/p/DINCNpjJTOr/?hl=es-la" target="_blank" class="mira-item" style="flex: 0 0 45%; text-align: center;">
-      <img src="video2.png" alt="NO TE PONGAS LOQUITA" style="width: 100%; border: 4px solid #3b5243; border-radius: 12px;">
-      <p style="color: #3b5243; font-size: 1.4em; text-align: center; font-weight: bold;">NO TE PONGAS LOQUITA</p>
-    </a>
+  <div class="slider-wrapper">
+    <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="slider">
+      <div class="slide active">
+        <a href="https://www.instagram.com/p/DIzbEuDpnrk/?hl=es-la" target="_blank">
+          <img src="video1.png" alt="El Chad Sabía Algo">
+          <p>EL CHAD SABÍA ALGO</p>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="https://www.instagram.com/p/DINCNpjJTOr/?hl=es-la" target="_blank">
+          <img src="video2.png" alt="No te pongas loquita">
+          <p>NO TE PONGAS LOQUITA</p>
+        </a>
+      </div>
+    </div>
+    <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
   </div>
 </section>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function moveSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+</script>
+
 
 
 <footer id="contacto" class="footer">
