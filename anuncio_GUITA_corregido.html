@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuncio GUITA</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .anuncio {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #3b5243;
+      color: white;
+      font-family: sans-serif;
+      width: 728px;
+      height: 90px;
+    }
+
+    .anuncio img {
+      height: 60px;
+    }
+
+    .anuncio p {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .anuncio a {
+      background-color: white;
+      color: #3b5243;
+      padding: 10px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 600px) {
+      .anuncio {
+        flex-direction: column;
+        height: 600px;
+        width: 300px;
+        padding: 20px;
+      }
+
+      .anuncio img {
+        height: 80px;
+        margin-bottom: 20px;
+      }
+
+      .anuncio p {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .anuncio a {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="anuncio">
+    <img src="logo-guita.png" alt="Logo GUITA">
+    <p>Simple. Pero bien hecho.</p>
+    <a href="https://felipelejtman.github.io/GUITA/#menu" target="_blank">Conocé el menú</a>
+  </div>
+</body>
+</html>
