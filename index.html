@@ -69,6 +69,37 @@
     <img src="nosotros.jpg" alt="Foto del local de GUITA">
   </div>
 </section>
+<section id="trabajamos" style="padding:40px; text-align:center;">
+  <h2 style="color:#3b5243; text-transform:uppercase; font-size:26px; margin-bottom:20px;">CÓMO TRABAJAMOS</h2>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+
+    <a href="javascript:void(0);" onclick="openLightbox(0)" style="display:inline-block;">
+      <img src="img/thumb_1.jpg" style="width:150px; height:auto; border-radius:8px; border:2px solid #3b5243;">
+    </a>
+    
+    <a href="javascript:void(0);" onclick="openLightbox(1)" style="display:inline-block;">
+      <img src="img/thumb_2.jpg" style="width:150px; height:auto; border-radius:8px; border:2px solid #3b5243;">
+    </a>
+    
+    <a href="javascript:void(0);" onclick="openLightbox(2)" style="display:inline-block;">
+      <img src="img/thumb_3.jpg" style="width:150px; height:auto; border-radius:8px; border:2px solid #3b5243;">
+    </a>
+    
+    <a href="javascript:void(0);" onclick="openLightbox(3)" style="display:inline-block;">
+      <img src="img/thumb_4.jpg" style="width:150px; height:auto; border-radius:8px; border:2px solid #3b5243;">
+    </a>
+    
+    <a href="javascript:void(0);" onclick="openLightbox(4)" style="display:inline-block;">
+      <img src="img/thumb_5.jpg" style="width:150px; height:auto; border-radius:8px; border:2px solid #3b5243;">
+    </a>
+    
+    <a href="javascript:void(0);" onclick="openLightbox(5)" style="display:inline-block;">
+      <img src="img/thumb_6.jpg" style="width:150px; height:auto; border-radius:8px; border:2px solid #3b5243;">
+    </a>
+    
+  </div>
+</section>
+
 
 
 
@@ -236,6 +267,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+</script>
+
+
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:40px; font-size:40px; color:#fff; cursor:pointer;">&times;</span>
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:80%; border-radius:10px;">
+  <div style="position:absolute; top:50%; left:20px; font-size:40px; color:white; cursor:pointer;" onclick="changeImage(-1)">&#10094;</div>
+  <div style="position:absolute; top:50%; right:20px; font-size:40px; color:white; cursor:pointer;" onclick="changeImage(1)">&#10095;</div>
+</div>
+<script>
+  const images = [
+    "img/full_1.jpg",
+    "img/full_2.jpg",
+    "img/full_3.jpg",
+    "img/full_4.jpg",
+    "img/full_5.jpg",
+    "img/full_6.jpg"
+  ];
+  let current = 0;
+
+  function openLightbox(index) {
+    current = index;
+    document.getElementById("lightbox-img").src = images[current];
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  function changeImage(dir) {
+    current = (current + dir + images.length) % images.length;
+    document.getElementById("lightbox-img").src = images[current];
+  }
 </script>
 
 </body>
