@@ -14,7 +14,12 @@
     <div class="logo">
       <a href="#top"><img src="logo-guita.png" alt="Logo GUITA"></a>
     </div>
-    <nav class="nav">
+    
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav class="nav nav-hidden" id="mobile-nav">
       <a href="#menu">Menú</a>
       <a href="#nosotros">Nosotros</a>
         <a href="#mira">Mirá</a>
@@ -301,6 +306,19 @@ document.addEventListener('DOMContentLoaded', function() {
     current = (current + dir + images.length) % images.length;
     document.getElementById("lightbox-img").src = images[current];
   }
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', function () {
+    nav.classList.toggle('nav-visible');
+    nav.classList.toggle('nav-hidden');
+  });
+});
 </script>
 
 </body>
